@@ -17,6 +17,7 @@ const profileSchema = new Schema({
         minlength: [11, 'phone number is invalid'],
         maxlength: [14, 'phone number is invalid'],
     },
+    githubLink: String,
     avatar: String,
     user: {
         type: Schema.Types.ObjectId,
