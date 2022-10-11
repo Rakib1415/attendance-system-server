@@ -1,11 +1,11 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable object-curly-newline */
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const error = require('../utils/error');
 const { findUserByProperty, createNewUser } = require('./user');
 
-const registerService = async ({
- name, email, password, roles, accountStatus 
-}) => {
+const registerService = async ({ name, email, password, roles, accountStatus }) => {
     const user = await findUserByProperty('email', email);
     if (user) {
         throw error('User already exists', 400);

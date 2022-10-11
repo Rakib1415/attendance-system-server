@@ -1,4 +1,7 @@
+/* eslint-disable object-curly-newline */
 const User = require('../models/User');
+
+const findUsers = () => User.find();
 
 const findUserByProperty = (key, value) => {
     if (key === '_id') {
@@ -7,9 +10,7 @@ const findUserByProperty = (key, value) => {
     return User.findOne({ [key]: value });
 };
 
-const createNewUser = ({
- name, email, password, roles, accountStatus 
-}) => {
+const createNewUser = ({ name, email, password, roles, accountStatus }) => {
     const user = new User({
         name,
         email,
@@ -22,4 +23,5 @@ const createNewUser = ({
 module.exports = {
     findUserByProperty,
     createNewUser,
+    findUsers,
 };
