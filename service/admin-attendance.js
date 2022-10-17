@@ -2,7 +2,7 @@ const AdminAttendance = require('../models/AdminAttendance');
 
 const getAdminAttendance = (key, value) => {
     if (key === '_id') return AdminAttendance.findById(value);
-    return AdminAttendance.findOne({ key: value });
+    return AdminAttendance.findOne({ [key]: value });
 };
 
 const createAdminAttendance = ({ status, timeLimit }) => {

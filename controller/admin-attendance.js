@@ -9,7 +9,7 @@ const getEnable = async (_req, res, next) => {
             'RUNNING',
         );
         if (adminAttendance) {
-            throw error('already running existing attendace', 400);
+            throw error('already running existing attendance', 400);
         }
         adminAttendance = await adminAttendanceService.createAdminAttendance({});
         return res.status(201).json({ message: 'success', adminAttendance });
